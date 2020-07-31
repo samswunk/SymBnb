@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container">
+    <h1 class="my-3">Voici nos annonces !</h1>
+        <div class="row">
+            {% for annonce in annonces %}
+                <div class="col-md-3">
+                    <div class="card bg-light mb-2" style="height: 420px;">
+                        <div class="card-header text-center">
+                            {{ annonce.rooms }} chambres <strong>{{ annonce.price }}€ / nuit</strong>
+                        </div>
+                        <a href="{{ path('ad_show',{'slug' : annonce.slug}) }}"><img src="{{ annonce.coverImage }}" alt="" style="height: 200px; width: 100%; display: block;"></a>
+                        <div class="card-body">
+                            <a href="{{ path('ad_show',{'slug' : annonce.slug}) }}"><h4 class="card-title">{{ annonce.title }}</h4></a>
+                            <p class="card-text">{{ annonce.introduction }}</p>
+                            <a href="{{ path('ad_show',{'slug' : annonce.slug}) }}" class="btn-secondary">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

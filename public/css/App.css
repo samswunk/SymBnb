@@ -1,0 +1,13 @@
+div.container {
+    margin-top: 20px;
+}
+div.titre-transparent-ombre {
+    padding: 2em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+div.titre-transparent-ombre h1, div.titre-transparent-ombre p, div.carousel-caption h5, div.carousel-caption p{
+    color: white;
+    text-shadow: 3px 3px 3px  rgba(0,0,0,0.5);
+}
